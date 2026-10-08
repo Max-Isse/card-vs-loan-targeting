@@ -1,0 +1,405 @@
+{
+ "truth": {
+  "loan": {
+   "probs": [
+    0.7619985530220418,
+    0.23800144697792266,
+    0.0,
+    0.0
+   ],
+   "value": 672.6892146082005
+  },
+  "card": {
+   "probs": [
+    0.8301601321228145,
+    0.0,
+    0.16983986787719862,
+    0.0
+   ],
+   "value": 239.17569052874438
+  },
+  "both": {
+   "probs": [
+    0.7086534650197291,
+    0.17358190667619727,
+    0.11160821832923422,
+    0.006156409974832771
+   ],
+   "value": 675.4379952420458
+  }
+ },
+ "arms": [
+  {
+   "arm": "loan",
+   "customers": 12000,
+   "takeup_loan": 0.23533333333333334,
+   "takeup_card": 0.0,
+   "takeup_both": 0.0,
+   "takeup_any": 0.23533333333333328,
+   "value": 658.5427550109645,
+   "value_ci_low": 600.8765348751036,
+   "value_ci_high": 716.2089751468253,
+   "true_value": 672.6892146082005
+  },
+  {
+   "arm": "card",
+   "customers": 12000,
+   "takeup_loan": 0.0,
+   "takeup_card": 0.1695,
+   "takeup_both": 0.0,
+   "takeup_any": 0.16949999999999998,
+   "value": 239.83298022649484,
+   "value_ci_low": 220.88511328527022,
+   "value_ci_high": 258.78084716771946,
+   "true_value": 239.17569052874438
+  },
+  {
+   "arm": "both",
+   "customers": 12000,
+   "takeup_loan": 0.17408333333333334,
+   "takeup_card": 0.12066666666666667,
+   "takeup_both": 0.005583333333333333,
+   "takeup_any": 0.2891666666666667,
+   "value": 668.587762033188,
+   "value_ci_low": 616.2793236710477,
+   "value_ci_high": 720.8962003953284,
+   "true_value": 675.4379952420458
+  }
+ ],
+ "value_differences": {
+  "card_minus_loan": {
+   "estimate": -418.70977478446963,
+   "ci_low": -479.4091537465308,
+   "ci_high": -358.01039582240844,
+   "truth": -433.5135240794561
+  },
+  "both_minus_loan": {
+   "estimate": 10.045007022223558,
+   "ci_low": -67.8110503441972,
+   "ci_high": 87.90106438864431,
+   "truth": 2.7487806338452856
+  }
+ },
+ "decomposition": [
+  {
+   "group": "all",
+   "quantity": "new",
+   "estimate": 0.0538333333333334,
+   "ci_low": 0.04308333333333336,
+   "ci_high": 0.06441875,
+   "truth": 0.05334508800233495
+  },
+  {
+   "group": "all",
+   "quantity": "diverted",
+   "estimate": 0.06125,
+   "ci_low": 0.05091458333333334,
+   "ci_high": 0.07175000000000001,
+   "truth": 0.05826313032689989
+  },
+  {
+   "group": "all",
+   "quantity": "took_both",
+   "estimate": 0.005583333333333333,
+   "ci_low": 0.004333333333333333,
+   "ci_high": 0.0069166666666666664,
+   "truth": 0.0061564099748328115
+  },
+  {
+   "group": "all",
+   "quantity": "card_takeup_both_arm",
+   "estimate": 0.12066666666666667,
+   "ci_low": 0.11466458333333333,
+   "ci_high": 0.12641666666666668,
+   "truth": 0.11776462830406778
+  },
+  {
+   "group": "all",
+   "quantity": "loan_takeup_loan_arm",
+   "estimate": 0.23533333333333334,
+   "ci_low": 0.22783333333333333,
+   "ci_high": 0.24283541666666666,
+   "truth": 0.23800144697793113
+  },
+  {
+   "group": "all",
+   "quantity": "loan_takeup_both_arm",
+   "estimate": 0.17408333333333334,
+   "ci_low": 0.16741666666666666,
+   "ci_high": 0.18083333333333335,
+   "truth": 0.17973831665103124
+  },
+  {
+   "group": "low",
+   "quantity": "new",
+   "estimate": -0.017028143425641407,
+   "ci_low": -0.035760872489756686,
+   "ci_high": 0.0012277675137283668,
+   "truth": -0.007202821391841585
+  },
+  {
+   "group": "low",
+   "quantity": "diverted",
+   "estimate": 0.057974226843749255,
+   "ci_low": 0.04049078029268345,
+   "ci_high": 0.07614968315263765,
+   "truth": 0.04888747638614738
+  },
+  {
+   "group": "low",
+   "quantity": "took_both",
+   "estimate": 0.001525940996948118,
+   "ci_low": 0.000508646998982706,
+   "ci_high": 0.002797558494404883,
+   "truth": 0.002258878376910807
+  },
+  {
+   "group": "low",
+   "quantity": "card_takeup_both_arm",
+   "estimate": 0.04247202441505595,
+   "ci_low": 0.03662258392675483,
+   "ci_high": 0.04857578840284842,
+   "truth": 0.04394353337121652
+  },
+  {
+   "group": "low",
+   "quantity": "loan_takeup_loan_arm",
+   "estimate": 0.2380352644836272,
+   "ci_low": 0.2244332493702771,
+   "ci_high": 0.2518891687657431,
+   "truth": 0.23793274723057573
+  },
+  {
+   "group": "low",
+   "quantity": "loan_takeup_both_arm",
+   "estimate": 0.18006103763987794,
+   "ci_low": 0.1683621566632757,
+   "ci_high": 0.19202060020345876,
+   "truth": 0.18904527084442835
+  },
+  {
+   "group": "middle",
+   "quantity": "new",
+   "estimate": 0.0336894375982324,
+   "ci_low": 0.014179825932242141,
+   "ci_high": 0.0524584142562195,
+   "truth": 0.03281268789359448
+  },
+  {
+   "group": "middle",
+   "quantity": "diverted",
+   "estimate": 0.05846158078229419,
+   "ci_low": 0.04126128205999514,
+   "ci_high": 0.07668744211236332,
+   "truth": 0.05510038290563066
+  },
+  {
+   "group": "middle",
+   "quantity": "took_both",
+   "estimate": 0.004967709885742673,
+   "ci_low": 0.0029806259314456036,
+   "ci_high": 0.007203179334326876,
+   "truth": 0.004807124156172349
+  },
+  {
+   "group": "middle",
+   "quantity": "card_takeup_both_arm",
+   "estimate": 0.09711872826626924,
+   "ci_low": 0.08842523596621957,
+   "ci_high": 0.10631520119225034,
+   "truth": 0.0927201949553975
+  },
+  {
+   "group": "middle",
+   "quantity": "loan_takeup_loan_arm",
+   "estimate": 0.23903783512904034,
+   "ci_low": 0.2260022550739163,
+   "ci_high": 0.25281884239538965,
+   "truth": 0.23828063576648406
+  },
+  {
+   "group": "middle",
+   "quantity": "loan_takeup_both_arm",
+   "estimate": 0.18057625434674615,
+   "ci_low": 0.16815697963238946,
+   "ci_high": 0.1925049677098857,
+   "truth": 0.1831802528608534
+  },
+  {
+   "group": "high",
+   "quantity": "new",
+   "estimate": 0.14282853754321878,
+   "ci_low": 0.12352340073937686,
+   "ci_high": 0.16336736885872394,
+   "truth": 0.13443332795569396
+  },
+  {
+   "group": "high",
+   "quantity": "diverted",
+   "estimate": 0.06721599486647933,
+   "ci_low": 0.05038166349149725,
+   "ci_high": 0.0835476873859386,
+   "truth": 0.07080272824843722
+  },
+  {
+   "group": "high",
+   "quantity": "took_both",
+   "estimate": 0.010143493320138546,
+   "ci_low": 0.007174666006927264,
+   "ci_high": 0.013359722909450767,
+   "truth": 0.011403790059325061
+  },
+  {
+   "group": "high",
+   "quantity": "card_takeup_both_arm",
+   "estimate": 0.22018802572983673,
+   "ci_low": 0.20732310737258783,
+   "ci_high": 0.23255813953488372,
+   "truth": 0.21663984626345656
+  },
+  {
+   "group": "high",
+   "quantity": "loan_takeup_loan_arm",
+   "estimate": 0.22901708343649418,
+   "ci_low": 0.21589502352067344,
+   "ci_high": 0.24213914335231493,
+   "truth": 0.2377903949740718
+  },
+  {
+   "group": "high",
+   "quantity": "loan_takeup_both_arm",
+   "estimate": 0.16180108857001485,
+   "ci_low": 0.15091538842157348,
+   "ci_high": 0.1731815932706581,
+   "truth": 0.1669876667256346
+  }
+ ],
+ "policies": [
+  {
+   "policy": "all_card",
+   "label": "Card to everyone",
+   "true_gain": -433.3043544041325,
+   "true_gain_p10": -441.41883940152803,
+   "true_gain_p90": -424.5795903734159,
+   "share_of_oracle": -5.2764375753872494,
+   "share_worlds_beats_status_quo": 0.0,
+   "heldout_estimate": -434.6137716104268,
+   "heldout_bias": -1.3094172062942988,
+   "insample_estimate": -433.75204923441294,
+   "insample_bias": -0.44769483028047774
+  },
+  {
+   "policy": "all_both",
+   "label": "Both to everyone",
+   "true_gain": 3.0998939574099484,
+   "true_gain_p10": 0.6641484502111048,
+   "true_gain_p90": 5.421777425623231,
+   "share_of_oracle": 0.037748055818840255,
+   "share_worlds_beats_status_quo": 0.965,
+   "heldout_estimate": 1.092809889684994,
+   "heldout_bias": -2.0070840677249544,
+   "insample_estimate": 1.3914013336857352,
+   "insample_bias": -1.7084926237242126
+  },
+  {
+   "policy": "seg_raw",
+   "label": "Segments, raw estimates",
+   "true_gain": 34.143224205316315,
+   "true_gain_p10": 21.36569214005117,
+   "true_gain_p90": 47.10561319712013,
+   "share_of_oracle": 0.41576916850869367,
+   "share_worlds_beats_status_quo": 0.99,
+   "heldout_estimate": 31.37090727980085,
+   "heldout_bias": -2.7723169255154687,
+   "insample_estimate": 131.29342069349266,
+   "insample_bias": 97.15019648817633
+  },
+  {
+   "policy": "seg_eb",
+   "label": "Segments, empirical-Bayes pooled",
+   "true_gain": 16.4349579410983,
+   "true_gain_p10": -5.183753998276123,
+   "true_gain_p90": 39.61357283103786,
+   "share_of_oracle": 0.2001319136281754,
+   "share_worlds_beats_status_quo": 0.765,
+   "heldout_estimate": 13.125700834691548,
+   "heldout_bias": -3.309257106406756,
+   "insample_estimate": 82.75652498936937,
+   "insample_bias": 66.32156704827106
+  },
+  {
+   "policy": "regression",
+   "label": "Regression (T-learner)",
+   "true_gain": 43.8813992198012,
+   "true_gain_p10": 27.55605622276971,
+   "true_gain_p90": 55.67986284393601,
+   "share_of_oracle": 0.5343529584934159,
+   "share_worlds_beats_status_quo": 1.0,
+   "heldout_estimate": 41.894471264648054,
+   "heldout_bias": -1.986927955153156,
+   "insample_estimate": 87.2201640620689,
+   "insample_bias": 43.3387648422677
+  },
+  {
+   "policy": "seg_oracle",
+   "label": "Best segment rule (truth known)",
+   "true_gain": 62.4006617933899,
+   "true_gain_p10": 60.56258103269431,
+   "true_gain_p90": 64.29765709263847,
+   "share_of_oracle": 0.75986588472773,
+   "share_worlds_beats_status_quo": 1.0,
+   "heldout_estimate": 61.14183176901504,
+   "heldout_bias": -1.2588300243748671,
+   "insample_estimate": 62.63672927478416,
+   "insample_bias": 0.23606748139424866
+  },
+  {
+   "policy": "oracle",
+   "label": "Best arm per customer (truth known)",
+   "true_gain": 82.12062555716511,
+   "true_gain_p10": 79.91487227255271,
+   "true_gain_p90": 84.62424888067949,
+   "share_of_oracle": 1.0,
+   "share_worlds_beats_status_quo": 1.0,
+   "heldout_estimate": 82.26779971414868,
+   "heldout_bias": 0.14717415698357017,
+   "insample_estimate": 80.22126010470822,
+   "insample_bias": -1.8993654524568757
+  }
+ ],
+ "decomposition_ci_coverage": {
+  "coverage95_new": 0.95,
+  "coverage95_diverted": 0.955,
+  "rmse_segment_both_effect_raw": 282.2330887416491,
+  "rmse_segment_both_effect_eb": 150.3109882780688
+ },
+ "example_policy_shares": {
+  "oracle": [
+   0.5952222222222222,
+   0.07475,
+   0.33002777777777775
+  ],
+  "regression": [
+   0.5696388888888889,
+   0.17477777777777778,
+   0.25558333333333333
+  ]
+ },
+ "example_policy_agreement_with_oracle": 0.6225833333333334,
+ "example_card_only_share_by_risk_band": {
+  "oracle": [
+   0.05508614976805832,
+   0.04096664735578912,
+   0.1292528493035036
+  ],
+  "regression": [
+   0.23525513585155733,
+   0.04659438881072581,
+   0.2439003799071338
+  ]
+ },
+ "median_product_value": {
+  "loan": 2051.7414779134087,
+  "card": 808.1877768467633
+ }
+}

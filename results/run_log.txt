@@ -1,0 +1,97 @@
+
+TRUTH
+ {
+ "loan": {
+  "probs": [
+   0.762,
+   0.238,
+   0.0,
+   0.0
+  ],
+  "value": 672.6892146082005
+ },
+ "card": {
+  "probs": [
+   0.8302,
+   0.0,
+   0.1698,
+   0.0
+  ],
+  "value": 239.17569052874438
+ },
+ "both": {
+  "probs": [
+   0.7087,
+   0.1736,
+   0.1116,
+   0.0062
+  ],
+  "value": 675.4379952420458
+ }
+}
+
+ARMS
+     arm  customers  takeup_loan  takeup_card  takeup_both  takeup_any     value  value_ci_low  value_ci_high  true_value
+0  loan      12000       0.2353       0.0000       0.0000      0.2353  658.5428      600.8765       716.2090    672.6892
+1  card      12000       0.0000       0.1695       0.0000      0.1695  239.8330      220.8851       258.7808    239.1757
+2  both      12000       0.1741       0.1207       0.0056      0.2892  668.5878      616.2793       720.8962    675.4380
+
+VALUE DIFFERENCES
+ {
+ "card_minus_loan": {
+  "estimate": -418.70977478446963,
+  "ci_low": -479.4091537465308,
+  "ci_high": -358.01039582240844,
+  "truth": -433.5135240794561
+ },
+ "both_minus_loan": {
+  "estimate": 10.045007022223558,
+  "ci_low": -67.8110503441972,
+  "ci_high": 87.90106438864431,
+  "truth": 2.7487806338452856
+ }
+}
+
+DECOMPOSITION (both vs loan only)
+      group              quantity  estimate  ci_low  ci_high   truth
+0      all                   new    0.0538  0.0431   0.0644  0.0533
+1      all              diverted    0.0612  0.0509   0.0718  0.0583
+2      all             took_both    0.0056  0.0043   0.0069  0.0062
+3      all  card_takeup_both_arm    0.1207  0.1147   0.1264  0.1178
+4      all  loan_takeup_loan_arm    0.2353  0.2278   0.2428  0.2380
+5      all  loan_takeup_both_arm    0.1741  0.1674   0.1808  0.1797
+6      low                   new   -0.0170 -0.0358   0.0012 -0.0072
+7      low              diverted    0.0580  0.0405   0.0761  0.0489
+8      low             took_both    0.0015  0.0005   0.0028  0.0023
+9      low  card_takeup_both_arm    0.0425  0.0366   0.0486  0.0439
+10     low  loan_takeup_loan_arm    0.2380  0.2244   0.2519  0.2379
+11     low  loan_takeup_both_arm    0.1801  0.1684   0.1920  0.1890
+12  middle                   new    0.0337  0.0142   0.0525  0.0328
+13  middle              diverted    0.0585  0.0413   0.0767  0.0551
+14  middle             took_both    0.0050  0.0030   0.0072  0.0048
+15  middle  card_takeup_both_arm    0.0971  0.0884   0.1063  0.0927
+16  middle  loan_takeup_loan_arm    0.2390  0.2260   0.2528  0.2383
+17  middle  loan_takeup_both_arm    0.1806  0.1682   0.1925  0.1832
+18    high                   new    0.1428  0.1235   0.1634  0.1344
+19    high              diverted    0.0672  0.0504   0.0835  0.0708
+20    high             took_both    0.0101  0.0072   0.0134  0.0114
+21    high  card_takeup_both_arm    0.2202  0.2073   0.2326  0.2166
+22    high  loan_takeup_loan_arm    0.2290  0.2159   0.2421  0.2378
+23    high  loan_takeup_both_arm    0.1618  0.1509   0.1732  0.1670
+
+POLICIES (200 simulated tests)
+        policy                                label  true_gain  true_gain_p10  true_gain_p90  share_of_oracle  share_worlds_beats_status_quo  heldout_estimate  heldout_bias  insample_estimate  insample_bias
+0    all_card                     Card to everyone   -433.304       -441.419       -424.580           -5.276                          0.000          -434.614        -1.309           -433.752         -0.448
+1    all_both                     Both to everyone      3.100          0.664          5.422            0.038                          0.965             1.093        -2.007              1.391         -1.708
+2     seg_raw              Segments, raw estimates     34.143         21.366         47.106            0.416                          0.990            31.371        -2.772            131.293         97.150
+3      seg_eb     Segments, empirical-Bayes pooled     16.435         -5.184         39.614            0.200                          0.765            13.126        -3.309             82.757         66.322
+4  regression               Regression (T-learner)     43.881         27.556         55.680            0.534                          1.000            41.894        -1.987             87.220         43.339
+5  seg_oracle      Best segment rule (truth known)     62.401         60.563         64.298            0.760                          1.000            61.142        -1.259             62.637          0.236
+6      oracle  Best arm per customer (truth known)     82.121         79.915         84.624            1.000                          1.000            82.268         0.147             80.221         -1.899
+
+DECOMPOSITION CI COVERAGE AND SEGMENT-EFFECT ERROR
+ {'coverage95_new': 0.95, 'coverage95_diverted': 0.955, 'rmse_segment_both_effect_raw': 282.2330887416491, 'rmse_segment_both_effect_eb': 150.3109882780688}
+
+EXAMPLE WORLD: arm shares {'oracle': [0.5952222222222222, 0.07475, 0.33002777777777775], 'regression': [0.5696388888888889, 0.17477777777777778, 0.25558333333333333]} agreement 0.623
+card-only share by risk band (low, medium, high) {'oracle': [0.05508614976805832, 0.04096664735578912, 0.1292528493035036], 'regression': [0.23525513585155733, 0.04659438881072581, 0.2439003799071338]}
+median expected 12-month value of a product taken {'loan': 2051.7414779134087, 'card': 808.1877768467633}
